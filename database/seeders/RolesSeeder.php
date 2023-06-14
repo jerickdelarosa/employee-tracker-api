@@ -15,9 +15,9 @@ class RolesSeeder extends Seeder
      */
     public function run()
     {
-        Schema::disableForeignKeyConstraints();
+        /* Schema::disableForeignKeyConstraints();
         DB::table('roles')->truncate();
-        Schema::enableForeignKeyConstraints();
+        Schema::enableForeignKeyConstraints(); */
 
         DB::table('roles')->insert([
             ['code' => 'groups', 'name' => 'Groups Management'],
