@@ -18,9 +18,16 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'avatar',
+        'last_name',
+        'first_name',
+        'middle_name',
+        'username',
         'email',
         'password',
+        'user_type_id',
+        'group_id',
+        'role_id',
     ];
 
     /**
@@ -33,12 +40,27 @@ class User extends Authenticatable
         'remember_token',
     ];
 
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
+
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function user_type()
+    {
+        return $this->hasOne(UserType::class, 'id', 'user_type_id');
+    }
+
+    public function office()
+    {
+    }
+
+    public function getIsAdminAttribute()
+    {
+        return $this->user_type_id === 1;
+    }
+
+    public function getIsUserAttribute()
+    {
+        return $this->user_type_id === 2;
+    }
 }
