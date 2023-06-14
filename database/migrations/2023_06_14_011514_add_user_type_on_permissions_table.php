@@ -20,10 +20,12 @@ class AddUserTypeOnPermissionsTable extends Migration
                 ->on('user_types')
                 ->cascadeOnDelete();
 
-            $table->foreignId('role_code')
-                ->after('user_type_id')
+            $table->string('role_code')->after('user_type_id');
+
+            $table->foreign('role_code', 'fk_permission_role')
                 ->references('code')
-                ->on('roles');
+                ->on('roles')
+                ->cascadeOnDelete();
         });
     }
 
