@@ -20,6 +20,8 @@ class UserTypesSeeder extends Seeder
 
         DB::table('user_types')->insert([
             ['name' => 'Administrator'],
+            ['name' => 'Department Manager'],
+            ['name' => 'Division Chief'],
             ['name' => 'User'],
         ]);
         Schema::enableForeignKeyConstraints();

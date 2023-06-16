@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddDesignationOnUsersTable extends Migration
+class AddDesignationTypeOnUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,13 @@ class AddDesignationOnUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('designation')->nullable()->after('password');
+            $table->foreignId('designation_type_id')
+                ->nullable()
+                ->after('password')
+                ->references('id')
+                ->on('designation_types')
+                ->nullOnDelete()
+                ->cascadeOnUpdate();
         });
     }
 
@@ -26,7 +32,7 @@ class AddDesignationOnUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('designation')->nullable()->after('password');
+            $table->dropConstrainedForeignId('designation_type_id');
         });
     }
 }

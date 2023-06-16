@@ -15,15 +15,13 @@ class SectorsSeeder extends Seeder
     public function run()
     {
         DB::table('sectors')->insert([
-            ['active' => true, 'sector_code' => 'MAIN', 'name' => 'Main Office Branch', 'branch_id' => 1],
-            ['active' => true, 'sector_code' => 'BUL', 'name' => 'Bulacan Branch', 'branch_id' => 2],
-            ['active' => true, 'sector_code' => 'OC', 'name' => 'Office of the Chairman', 'branch_id' => 1],
-            ['active' => true, 'sector_code' => 'OGM', 'name' => 'Office of the General Manager', 'branch_id' => 1],
-            ['active' => true, 'sector_code' => 'GPDMS', 'name' => 'Gaming, Product Developlement & Marketing Sector', 'branch_id' => 1],
-            ['active' => true, 'sector_code' => 'BOS', 'name' => 'Branch Operations Sector', 'branch_id' => 1],
-            ['active' => true, 'sector_code' => 'CS', 'name' => 'Charity Sector', 'branch_id' => 1],
-            ['active' => true, 'sector_code' => 'MSS', 'name' => 'Management Services Sector', 'branch_id' => 1],
-            ['active' => true, 'sector_code' => 'AS', 'name' => 'Administrative Sector', 'branch_id' => 1]
+            ['active' => true, 'sector_code' => 'OC', 'name' => 'Office of the Chairman'],
+            ['active' => true, 'sector_code' => 'OGM', 'name' => 'Office of the General Manager'],
+            ['active' => true, 'sector_code' => 'GPDMS', 'name' => 'Gaming, Product Developlement & Marketing Sector'],
+            ['active' => true, 'sector_code' => 'BOS', 'name' => 'Branch Operations Sector'],
+            ['active' => true, 'sector_code' => 'CS', 'name' => 'Charity Sector'],
+            ['active' => true, 'sector_code' => 'MSS', 'name' => 'Management Services Sector'],
+            ['active' => true, 'sector_code' => 'AS', 'name' => 'Administrative Sector']
         ]);
     }
 }
